@@ -1,0 +1,24 @@
+{
+  "name": "optimized-portfolio",
+  "version": "0.1.0",
+  "description": "optimization of custom portfolio using compression, minification, inline and other methods",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpvergara16/Project-Frontend-Nanodegree-Mobile-Portfolio.git"
+  },
+  "author": "Julius Vergara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpvergara16/Project-Frontend-Nanodegree-Mobile-Portfolio/issues"
+  },
+  "homepage": "https://github.com/jpvergara16/Project-Frontend-Nanodegree-Mobile-Portfolio#readme",
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^2.2.0",
+    "grunt-contrib-uglify": "^2.1.0"
+  }
+}
