@@ -27,6 +27,7 @@ After it starts, a web browser window should be jump up. If you don't see the wi
 * Rewrite HTML with semantic tags
 * Relocated external JS file link
 * Resized and compressed all images
+* Inlined style.css
 * Replaced the link to external CSS file with JS WebFont.load function
 * Embedded Data URI rather than image links to improve PageSpeed score
 
@@ -37,7 +38,7 @@ After it starts, a web browser window should be jump up. If you don't see the wi
 * Removed unnecessary HTML tags
 * Updated HTML with semantic tags
 * Re-write the navigation menu code
-* Inlined CSS file
+* Inlined css file
 
 ####Optimizations in views/js/main.js:
 

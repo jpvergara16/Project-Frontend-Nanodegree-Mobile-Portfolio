@@ -6,25 +6,26 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         //Compress images
         imagemin: {
-            dist: {
-                options: {
-                    optimizeationLevel: 5
-                },
-                files: [{
-                        expand: true,
-                        cwd: 'img',
-                        src: ['**/*.{png,jpg,gif}'],
-                        dest: '../img',
-                    },
-                    {
-                        expand: true,
-                        cwd: 'views/images',
-                        src: ['**/*.{png,jpg,gif}'],
-                        dest: '../views/images',
-                    }
-                ]
-            }
-        },
+    			dist: {
+    				options: {
+    					optimizeationLevel: 5
+    				},
+    				files: [
+    				{
+    					expand: true,
+    					cwd: 'img',
+    					src: ['**/*.{png,jpg,gif}'],
+    					dest: 'img/'
+    				},
+    				{
+    					expand: true,
+    					cwd: 'views/images',
+    					src: ['**/*.{png,jpg,gif}'],
+    					dest: 'views/images/'
+    				}
+    				]
+    			}
+    		},
         htmlmin: {
             portfolio: {
                 options: {
