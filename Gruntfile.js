@@ -1,3 +1,4 @@
+
 module.exports = function(grunt) {
 
     // Project configuration.
@@ -13,11 +14,13 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'img',
                         src: ['**/*.{png,jpg,gif}'],
+                        dest: '../img',
                     },
                     {
                         expand: true,
                         cwd: 'views/images',
                         src: ['**/*.{png,jpg,gif}'],
+                        dest: '../views/images',
                     }
                 ]
             }
@@ -57,7 +60,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'css',
                         src: '*.css',
-                        dest: '../diff/css',
+                        dest: '../css',
                         ext: '.css'
                     },
                     {
@@ -72,7 +75,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
