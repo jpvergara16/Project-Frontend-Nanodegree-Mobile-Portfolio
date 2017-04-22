@@ -13,13 +13,13 @@ module.exports = function(grunt) {
     				files: [
     				{
     					expand: true,
-    					cwd: 'src/img',
+    					cwd: 'img',
     					src: ['**/*.{png,jpg,gif}'],
     					dest: 'dest/img/'
     				},
     				{
     					expand: true,
-    					cwd: 'src/views/images',
+    					cwd: 'views/images',
     					src: ['**/*.{png,jpg,gif}'],
     					dest: 'dest/views/images/'
     				}
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    '../Project-Frontend-Nanodegree-Mobile-Portfolio/src/index.html': 'dest/index.html',
+                    '../Project-Frontend-Nanodegree-Mobile-Portfolio/index.html': 'dest/index.html',
                 }
             },
             pizzas: {
@@ -42,13 +42,13 @@ module.exports = function(grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    '../Project-Frontend-Nanodegree-Mobile-Portfolio/src/views/pizza.html': 'dest/views/pizza.html',
+                    '../Project-Frontend-Nanodegree-Mobile-Portfolio//views/pizza.html': 'dest/views/pizza.html',
                 }
             }
         },
         uglify: {
             min: {
-                files: grunt.file.expandMapping(['js/*.js', 'src/views/**/*.js'], '../Project-Frontend-Nanodegree-Mobile-Portfolio/', {
+                files: grunt.file.expandMapping(['js/*.js', '/views/**/*.js'], '../Project-Frontend-Nanodegree-Mobile-Portfolio/', {
                     rename: function(destBase, destPath) {
                         return destBase + destPath;
                     }
@@ -59,14 +59,14 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                         expand: true,
-                        cwd: 'src/css',
+                        cwd: 'css',
                         src: '*.css',
                         dest: '..dest/css',
                         ext: '.css'
                     },
                     {
                         expand: true,
-                        cwd: 'src/views/css',
+                        cwd: 'views/css',
                         src: '*.css',
                         dest: '../Project-Frontend-Nanodegree-Mobile-Portfolio/dest/views/css',
                         ext: '.css'
