@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         //Import package.json
         pkg: grunt.file.readJSON('package.json'),
 
-		// Clean destion folder
+		// Clean destination folder
 		clean: {
 			folder: ['dest']
 		},
