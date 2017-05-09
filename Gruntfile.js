@@ -4,30 +4,24 @@ module.exports = function (grunt) {
     grunt.initConfig({
         //Import package.json
         pkg: grunt.file.readJSON('package.json'),
-
-		// Clean destination folder
-		clean: {
-			folder: ['dest']
-		},
-
 		//Compress images
 		imagemin: {
 			dist: {
 				options: {
-					optimizeationLevel: 5
+					optimizationLevel: 5
 				},
 				files: [
 				{
-					expand: true,
+          expand: true,
 					cwd: 'img',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: 'dest/img/'
+					dest: 'img/'
 				},
 				{
 					expand: true,
 					cwd: 'views/images',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: 'dest/views/images/'
+					dest: 'views/images/'
 				}
 				]
 			}
@@ -36,8 +30,8 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-					'dest/views/js/main.min.js': ['views/js/main.js'],
-					'dest/js/perfmatters.min.js': ['js/perfmatters.js']
+					'views/js/main.js': ['views/js/main.js'],
+					'js/perfmatters.js': ['js/perfmatters.js']
 				}
             }
         },
@@ -46,51 +40,35 @@ module.exports = function (grunt) {
         cssmin: {
             my_target: {
                 files: {
-					'dest/css/print.min.css': ['css/print.css'],
-					'dest/css/style.min.css': ['css/style.css'],
-					'dest/views/css/bootstrap-grid.min.css': ['views/css/bootstrap-grid.css'],
-					'dest/views/css/style.min.css': ['views/css/style.css']
+					'css/print.css': ['css/print.css'],
+					'css/style.css': ['css/style.css'],
+					'views/css/bootstrap-grid.css': ['views/css/bootstrap-grid.css'],
+					'views/css/style.css': ['views/css/style.css']
 				}
             }
         },
-
-		//Inline minified CSS file
-		//Reference https://github.com/eruizdechavez/grunt-string-replace
-		'string-replace': {
-			inline: {
-				files: {
-					'dest/': ['*.html', 'views/*.html'],
-				},
+        //Inline minified CSS file
+		    //Reference https://github.com/eruizdechavez/grunt-string-replace
+		    'string-replace': {
+			  inline: {
 				options: {
 					replacements: [
 					{
 						pattern: '<!-- @import main css -->',
-						replacement: '<style><%= grunt.file.read("dest/css/style.min.css") %></style>'
-					},
-					{
-						pattern: '<link href="css/print.css" media="print" rel="stylesheet">',
-						replacement: '<link href="css/print.min.css" media="print" rel="stylesheet">'
+						replacement: '<style><%= grunt.file.read("css/style.css") %></style>'
 					},
 					{
 						pattern: '<!-- @import Pizza stylesheet -->',
-						replacement: '<style><%= grunt.file.read("dest/views/css/style.min.css") %></style>'
-					},
-					{
-						pattern: '<link rel="stylesheet" href="css/bootstrap-grid.css">',
-						replacement: '<link rel="stylesheet" href="css/bootstrap-grid.min.css">'
+						replacement: '<style><%= grunt.file.read("views/css/style.css") %></style>'
 					},
 					{
 						pattern: '<script src="js/perfmatters.js"></script>',
-						replacement: '<script><%= grunt.file.read("dest/js/perfmatters.min.js") %></script>'
-					},
-					{
-						pattern: '<script type="text/javascript" src="js/main.js"></script>',
-						replacement: '<script type="text/javascript" src="js/main.min.js"></script>'
+						replacement: '<script><%= grunt.file.read("js/perfmatters.js") %></script>'
 					}]
 				}
 			}
 		},
-
+    //minify HTML
 		htmlmin: {
 			dest: {
 				options: {
@@ -99,9 +77,7 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: 'dest/',
 					src: ['*.html', 'views/*.html'],
-					dest: 'dest/',
 					filter: 'isFile'
 				}]
 			}
@@ -109,14 +85,13 @@ module.exports = function (grunt) {
     });
 
     // Load Grunt plugins
-	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-string-replace');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-string-replace');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // Run tasks
-    grunt.registerTask('default', ['clean', 'imagemin', 'uglify', 'cssmin', 'string-replace', 'htmlmin']);
+    grunt.registerTask('default', ['imagemin', 'uglify', 'cssmin', 'string-replace','htmlmin']);
 
 };

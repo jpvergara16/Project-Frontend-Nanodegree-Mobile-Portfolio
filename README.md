@@ -83,5 +83,7 @@ Grunt is a task-runner that for this project was used to:
 * Minify CSS files [cssmin](https://github.com/gruntjs/grunt-contrib-cssmin)
 * Minify JavaScript files [uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 * Compress images [imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
+* Replace file names with dest file names[string-replace](https://github.com/eruizdechavez/grunt-string-replace)
 * Minify HTML files after above tasks [htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)
+
 
