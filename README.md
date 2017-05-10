@@ -10,7 +10,7 @@ Download or use git to clone this repository to local, then transfer the entire 
 
 ###Recommended approach
 
-You are recommended to use SimpleHTTPServer if Python has been installed (Mac OS X and Linux should have pre-installed version). Decompress the file in Explorer (Windows) or Finder (Mac), open a terminal window, use cd  command to get in the file folder and run the following command:
+You are recommended to use SimpleHTTPServer if Python has been installed (Mac OS X and Linux should have pre-installed version). Decompress the file in Explorer (Windows) or Finder (Mac), open a terminal window, use cd command to get in the file folder and run the following command:
 
 * cd dest
 * python -m SimpleHTTPServer
@@ -83,7 +83,5 @@ Grunt is a task-runner that for this project was used to:
 * Minify CSS files [cssmin](https://github.com/gruntjs/grunt-contrib-cssmin)
 * Minify JavaScript files [uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 * Compress images [imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
-* Replace file names with dest file names[string-replace](https://github.com/eruizdechavez/grunt-string-replace)
 * Minify HTML files after above tasks [htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)
-
 
