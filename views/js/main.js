@@ -496,7 +496,7 @@ document.addEventListener("DOMContentLoaded", function () {
     webWidth = window.screen.width;
     webHeight = window.screen.height;
 
-    // Caculate the number of background pizza column based on browser window size
+    // Calculates the number of background pizza column based on browser window size
     var i, s = 256;
     var cols = Math.floor(webWidth / s) + 2;
     var backgroundPizzas = cols * (Math.floor(webHeight / s));

@@ -50,29 +50,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        //Inline minified CSS file
-        'string-replace': {
-            inline: {
-                files: {
-                    'dest/': ['*.html', 'views/*.html'],
-                },
-                options: {
-                    replacements: [{
-                            pattern: '<!-- @import main css -->',
-                            replacement: '<style> <%= grunt.file.read("dest/css/style.css") %> </style>'
-                        },
-                        {
-                            pattern: '<!-- @import Pizza stylesheet -->',
-                            replacement: '<style> <%= grunt.file.read("dest/views/css/style.css") %> </style>'
-                        },
-                        {
-                            pattern: '<script src="js/perfmatters.js"></script>',
-                            replacement: '<script> <%= grunt.file.read("dest/js/perfmatters.js") %> </script>'
-                        }
-                    ]
-                }
-            }
-        },
+
         //minify HTML
         htmlmin: {
             dest: {
@@ -97,10 +75,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-string-replace');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // Run tasks
-    grunt.registerTask('default', ['clean', 'imagemin', 'uglify', 'cssmin', 'string-replace', 'htmlmin']);
+    grunt.registerTask('default', ['clean', 'imagemin', 'uglify', 'cssmin', 'htmlmin']);
 
 };
