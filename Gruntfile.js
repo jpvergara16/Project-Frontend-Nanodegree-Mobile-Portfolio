@@ -10,26 +10,27 @@ module.exports = function(grunt) {
             folders: ['dest']
         },
         //Compress images
-        imagemin: {
-            dist: {
-                options: {
-                    optimizationLevel: 5
-                },
-                files: [{
-                        expand: true,
-                        cwd: 'img',
-                        src: ['**/*.{png,jpg,gif}'],
-                        dest: 'dest/img/'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'views/images',
-                        src: ['**/*.{png,jpg,gif}'],
-                        dest: 'dest/views/images/'
-                    }
-                ]
-            }
-        },
+    		imagemin: {
+      			dist: {
+      				options: {
+      					optimizationLevel: 5
+      				},
+      				files: [
+      				{
+      					expand: true,
+      					cwd: 'img',
+      					src: ['**/*.{png,jpg,gif}'],
+      					dest: 'dest/img/'
+      				},
+      				{
+      					expand: true,
+      					cwd: 'views/images',
+      					src: ['**/*.{png,jpg,gif}'],
+      					dest: 'dest/views/images/'
+      				}
+      				]
+      			}
+    		},
         //Minify js files
         uglify: {
             my_target: {
@@ -72,12 +73,12 @@ module.exports = function(grunt) {
 
     // Load Grunt plugins
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // Run tasks
-    grunt.registerTask('default', ['clean', 'imagemin', 'uglify', 'cssmin', 'htmlmin']);
+    grunt.registerTask('default', ['clean', 'uglify', 'imagemin', 'cssmin', 'htmlmin']);
 
 };
