@@ -35,7 +35,6 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'dest/views/js/main.js': ['views/js/main.js'],
                     'dest/js/perfmatters.js': ['js/perfmatters.js']
                 }
             }
